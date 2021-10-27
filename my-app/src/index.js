@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
-// Nested Components, React Tools
+// CSS
+import './index.css'
 
 function BookList() {
   return (
-  <section>
+  <section className="booklist">
     <Book />
     <Book />
     <Book />
@@ -42,7 +43,7 @@ function BookList() {
 
 const Book = () => {
   return (
-  <article>
+  <article className="book">
     <Image />
     <Title />
     <Author />
