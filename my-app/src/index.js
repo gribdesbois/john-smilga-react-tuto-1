@@ -4,23 +4,28 @@ import ReactDom from 'react-dom'
 // CSS
 import './index.css'
 
+// setup variables
+const author = 'Amelia Hepworth'
+const title = 'I Love You to the Moon and Back'
+const imgUrl = 'https://images-na.ssl-images-amazon.com/images/I/517h-u1AQlL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg'
+
 function BookList() {
   return (
   <section className="booklist">
-    <Book />
+    <Book job='developer'/>
+    <Book title='random title' number ={22}/>
   </section>
   )
 
 }
-const author = 'Amelia Hepworth'
-const Book = () => {
-  const title = 'I Love You to the Moon and Back'
+
+const Book = (props) => {
+  console.log(props)
   return (
   <article className="book">
-    <img src="https://images-na.ssl-images-amazon.com/images/I/517h-u1AQlL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg" alt="" />
+    <img src={imgUrl} alt="" />
     <h1>{title}</h1>
-    <h4>{author.toUpperCase()}</h4>
-    {/* <p>{const  x = 6} </p> */}{/* Statements are prohibited */}
+    <h4>{author}</h4>
   </article>
   )
 }
