@@ -15,22 +15,23 @@ const books = [
     imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/516hUF87pTL._SX361_BO1,204,203,200_.jpg'
   }
 ]
-const names = ['john', 'peter', 'susan']
-const newNames = names.map((name)=> {
-  return <h1>{name}</h1>
-})
-console.log(newNames)
+
 function BookList() {
   return (
   <section className="booklist">
-   {newNames}
+    {books.map((book)=> {
+      const {imgUrl, title, author} = book
+      return (
+        <Book book={book}></Book>
+      )
+    })}
   </section>
   )
 
 }
 
-const Book = ({imgUrl, title, author}) => {
-  //const {imgUrl, title, author} = props
+const Book = (props) => {
+  const {imgUrl, title, author} = props.book
   return (
   <article className="book">
     <img src={imgUrl} alt="" />
