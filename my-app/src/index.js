@@ -44,15 +44,19 @@ const Book = (props) => {
   const clickHandler = () => {
     alert('hello world')
   }
+  const complexExample = (author) => {
+    console.log(author)
+  }
   return (
   <article className="book">
     <img src={imgUrl} alt="" />
-    <h1>{title}</h1>
+    <h1 onClick={() => console.log(title)}>{title}</h1>
     <h4>{author}</h4>
     <button type="button" onClick={clickHandler}>
       reference example
     </button>
-  </article>
+    <button type="button" onClick={ () => complexExample(author) }>more complex example</button>
+  </article> /* We need the above arrow function to pass author in param */
   )
 }
 
