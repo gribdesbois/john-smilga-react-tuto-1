@@ -29,3 +29,9 @@ body{
     border-radius: 1rem;
     padding: 1rem 2rem;
 }
+
+.book h4 {
+    color:#617d98;
+    font-size: 0.75rem;
+    margin-top:0.25rem;
+}
