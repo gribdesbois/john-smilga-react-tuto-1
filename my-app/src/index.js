@@ -3,50 +3,38 @@ import ReactDom from 'react-dom'
 
 // CSS
 import './index.css'
-
-const firstBook = {
-  author: 'Amelia Hepworth',
-  title: 'I Love You to the Moon and Back',
-  imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/517h-u1AQlL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg'
-}
-
-const secondBook = {
-  author: 'Dr Seuss',
-  title: 'The Cat in the Hat in English and French',
-  imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/516hUF87pTL._SX361_BO1,204,203,200_.jpg'
-}
-
+const books = [
+  {
+    author: 'Amelia Hepworth',
+    title: 'I Love You to the Moon and Back',
+    imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/517h-u1AQlL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg'
+  },
+  {
+    author: 'Dr Seuss',
+    title: 'The Cat in the Hat in English and French',
+    imgUrl: 'https://images-na.ssl-images-amazon.com/images/I/516hUF87pTL._SX361_BO1,204,203,200_.jpg'
+  }
+]
+const names = ['john', 'peter', 'susan']
+const newNames = names.map((name)=> {
+  return <h1>{name}</h1>
+})
+console.log(newNames)
 function BookList() {
   return (
   <section className="booklist">
-    <Book 
-      imgUrl={firstBook.imgUrl}
-      title={firstBook.title}
-      author={firstBook.author}
-    >
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur libero enim suscipit dolor? 
-      Ab perferendis neque eius nulla a! Nam totam, nihil distinctio commodi possimus ipsa. Architecto impedit
-      cumque nesciunt.
-    </p>
-    </Book>
-    <Book 
-      imgUrl={secondBook.imgUrl}
-      title={secondBook.title}
-      author={secondBook.author}
-    />
+   {newNames}
   </section>
   )
 
 }
 
-const Book = ({imgUrl, title, author, children}) => {
+const Book = ({imgUrl, title, author}) => {
   //const {imgUrl, title, author} = props
   return (
   <article className="book">
     <img src={imgUrl} alt="" />
     <h1>{title}</h1>
-    {children}
     <h4>{author}</h4>
   </article>
   )
